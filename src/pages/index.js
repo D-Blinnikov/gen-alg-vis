@@ -10,7 +10,7 @@ export default function Home({session}) {
   const disposedBalls = []
 
   return (
-   <div  id="container" className="grid bg-slate-400 w-screen h-screen  grid-cols-3">
+   <div  id="container" className="grid bg-slate-400 w-screen h-screen grid-cols-3">
     
       <title>Genetic Algorythm Visualisation</title>
     
