@@ -18,12 +18,25 @@ const Space = ({disposedBalls, balls, session}) => {
     
     const textRef = useRef()
 
-    labels.map((_, i) => {labels[i] = useRef()})
-    mats.map((_, i) => {mats[i] = useRef()})
+    //labels.map((_, i) => {labels[i] = useRef()})
+    //mats.map((_, i) => {mats[i] = useRef()})
+
+    labels[0] = useRef()
+    labels[1] = useRef()
+    labels[2] = useRef()
+    labels[3] = useRef()
+    labels[4] = useRef()
+
+    mats[0] = useRef()
+    mats[1] = useRef()
+    mats[2] = useRef()
+    mats[3] = useRef()
+    mats[4] = useRef()
 
     const isClicked = useInputStore(state => state.isClicked)
     const setIsClicked = useInputStore(state => state.setIsClicked)
-    
+    let currentTimeLine = useSpaceStore(state => state.currentTimeLine)
+    const setCurrentTimeLine = useSpaceStore(state => state.setCurrentTimeLine)
     const showCoord = useSpaceStore(state => state.showCoord)
     const clicks = useInputStore(state => state.clicks)
     const setClicks = useInputStore(state => state.setClicks)
@@ -95,6 +108,8 @@ const Space = ({disposedBalls, balls, session}) => {
       }
 
       let timeline = gsap.timeline()
+      setCurrentTimeLine(timeline)
+      console.log('CURRENT TL:', currentTimeLine)
       
       const average = []
 
@@ -121,6 +136,8 @@ const Space = ({disposedBalls, balls, session}) => {
         
         tl.to(disposedBalls[clicks - 1].balls[0].material, {opacity : 0, duration: 3,})
         tl.to(disposedBalls[clicks - 1].balls[5].material, {opacity : 0, duration: 3,}, "<")
+
+        currentTimeLine.kill()
         
       }      
       
@@ -231,7 +248,9 @@ const Space = ({disposedBalls, balls, session}) => {
 
     useEffect(() => {
       if(isClicked){
+
         clickHandler(sol)
+        
       }
     }, [isClicked]);
 

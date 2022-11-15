@@ -23,33 +23,29 @@ const AuthorizedUser = ({session, equs}) => {
                       <tr>
                         <th
                           scope="col"
-                          className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
-                        >
+                          className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                           Уравнение
                         </th>
                         <th
                           scope="col"
-                          className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
-                        >
+                          className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                           Решение
                         </th>
                         <th
                           scope="col"
-                          className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
-                        >
+                          className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                           Итерации
                         </th>
                         <th
                           scope="col"
-                          className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
-                        >
+                          className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                           Тип
                         </th>
                       </tr>
                     </thead>
                     <tbody className="bg-gray-700 divide-y divide-gray-500">
-                      {equs.map(equ => (
-                        <tr>
+                      {equs.map((equ, index) => (
+                        <tr key={index}>
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">
                             {equ.equation}
                           </td>
@@ -69,7 +65,6 @@ const AuthorizedUser = ({session, equs}) => {
                       ))}
                     </tbody>
                   </table>
-                {/* </div> */}
               </div>
             </div>
           </section>
@@ -77,7 +72,6 @@ const AuthorizedUser = ({session, equs}) => {
       </main>
       </div>
       </div>
-
         </>
      );
 }
