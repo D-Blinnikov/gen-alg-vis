@@ -1,4 +1,4 @@
-import AuthorizedUser from "../components/authorizeduser";
+import AuthorizedUser from "../components/AuthorizedUser";
 import Guest from "../components/Guest";
 import { getSession, useSession, signOut } from "next-auth/react";
 import { prisma } from '../../prisma/prismaInstance';
