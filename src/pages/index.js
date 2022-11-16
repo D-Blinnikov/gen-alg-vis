@@ -10,12 +10,13 @@ export default function Home({session}) {
   const disposedBalls = []
 
   return (
-   <div  id="container" className="grid bg-slate-400 w-screen h-screen grid-cols-3">
+    
+   <div  id="container" className="grid bg-white w-full h-full grid-cols-3">
     
       <title>Genetic Algorythm Visualisation</title>
     
-    <div id="left" className="bg-white p-8 ">
-      <h1 className="mb-16 text-center text-gray-800 font-bold text-2xl">{HEADER_TEXT}</h1>
+    <div id="left" className="bg-white h-screen">
+      <h1 className="mb-10 p-8 text-center text-gray-800 font-bold text-2xl">{HEADER_TEXT}</h1>
       <InputForm/>
     </div>
 
@@ -25,11 +26,13 @@ export default function Home({session}) {
         disposedBalls = {disposedBalls}/>
     </div>
     
-    <div className="fixed top-7 left-1320px text-gray-800">
+    <div className="absolute top-7 right-20 text-gray-800">
         <LogNavbar session = {session}/>
     </div>
    
    </div>
+
+  
   )
 }
 
