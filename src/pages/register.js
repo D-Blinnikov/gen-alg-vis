@@ -78,7 +78,7 @@ const Register = () => {
     return ( 
       <div className="flex h-screen w-screen bg-slate-200">
          {/* <div className="flex"> */}
-      <div className="m-auto bg-slate-50 rounded-md w-3/5 h-3/4 grid lg:grid-cols-2">
+      <div className="m-auto bg-slate-50 w-3/5 h-5/6 grid lg:grid-cols-2">
         
         <div className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700">
         <>
@@ -140,10 +140,10 @@ const Register = () => {
                   <div className="input-button">
                     <button className={styles.button} type="submit">Зарегестрироваться</button>
                   </div>
-                </form>
-                <p className="text-sm text-center text-gray-400">
+                <p className="text-sm pt-2 text-center text-gray-400">
                   Уже зарегестрированы? <Link href={'/login'} className ="text-blue-700">Войти</Link>
                 </p>
+                </form>
               </div>
             </section>
         </div>
